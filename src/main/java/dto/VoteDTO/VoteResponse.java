@@ -1,6 +1,7 @@
 package dto.VoteDTO;
 
 import domain.Answer;
+import domain.Vote;
 
 /**
  * Created by DmitryL on 02.08.2017.
@@ -12,6 +13,15 @@ public class VoteResponse {
     private String email;
 
     private Answer answer;
+
+    public VoteResponse(Vote vote) {
+        this.id = vote.getId();
+        this.email = vote.getEmail();
+        this.answer = vote.getAnswer();
+    }
+
+    public VoteResponse() {
+    }
 
     public long getId() {
         return id;

@@ -1,15 +1,25 @@
 package dto.ThemeDTO;
 
+import domain.Theme;
+
 /**
  * Created by DmitryL on 02.08.2017.
  */
 public class ThemeResponse {
 
     private long id;
-
     private String name;
-
     private int status;
+
+    public ThemeResponse(Theme theme) {
+        this.id = theme.getId();
+        this.name = theme.getName();
+        this.status = theme.getStatus();
+    }
+
+    public ThemeResponse() {
+
+    }
 
     public long getId() {
         return id;

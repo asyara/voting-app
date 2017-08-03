@@ -15,13 +15,13 @@ import java.util.List;
  */
 
 @Transactional
-public class AnswerServiceImpl implements AnswerService{
+public class AnswerServiceImpl implements AnswerService {
 
     @Autowired
     private AnswerRepository answerRepository;
 
     @Override
-    public AnswerResponse add(AnswerRequest answerRequest) {
+    public AnswerResponse create(AnswerRequest answerRequest) {
         Answer newAnswer = new Answer();
         newAnswer.setTheme(answerRequest.getTheme());
         newAnswer.setAnswerText(answerRequest.getAnswerText());
@@ -31,11 +31,12 @@ public class AnswerServiceImpl implements AnswerService{
     }
 
     @Override
-    public Answer edit(long id, Answer answer) {
+    public AnswerResponse update(long id, AnswerRequest answerRequest) {
         Answer editedAnswer = answerRepository.findOne(id);
-        editedAnswer.setAnswerText(answer.getAnswerText());
-        editedAnswer.setTheme(answer.getTheme());
-        return answerRepository.saveAndFlush(editedAnswer);
+        editedAnswer.setTheme(answerRequest.getTheme());
+        editedAnswer.setAnswerText(answerRequest.getAnswerText());
+        AnswerResponse response = new AnswerResponse(editedAnswer);
+        return response;
     }
 
     @Override
@@ -54,7 +55,7 @@ public class AnswerServiceImpl implements AnswerService{
     public List<AnswerResponse> getAll() {
         List<Answer> answers = answerRepository.findAll();
         List<AnswerResponse> responses = new ArrayList<>();
-        for(int i = 0; i < answers.size(); i++) {
+        for (int i = 0; i < answers.size(); i++) {
             AnswerResponse response = new AnswerResponse(answers.get(i));
             responses.add(response);
         }

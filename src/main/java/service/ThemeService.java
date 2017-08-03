@@ -1,6 +1,8 @@
 package service;
 
 import domain.Theme;
+import dto.ThemeDTO.ThemeRequest;
+import dto.ThemeDTO.ThemeResponse;
 
 import java.util.List;
 
@@ -9,9 +11,13 @@ import java.util.List;
  */
 public interface ThemeService {
 
-    Theme add(Theme answer);
-    Theme edit(long id, Theme theme);
+    ThemeResponse create(ThemeRequest themeRequest);
+
+    ThemeResponse update(long id, ThemeRequest themeRequest);
+
     void delete(long id);
-    Theme getById(long id);
-    List<Theme> getAll();
+
+    ThemeResponse getById(long id);
+
+    List<ThemeResponse> getAll();
 }

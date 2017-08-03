@@ -8,7 +8,6 @@ import domain.Answer;
 public class VoteRequest {
 
     private String email;
-
     private Answer answer;
 
     public String getEmail() {

@@ -1,6 +1,8 @@
 package service;
 
 import domain.Vote;
+import dto.VoteDTO.VoteRequest;
+import dto.VoteDTO.VoteResponse;
 
 import java.util.List;
 
@@ -9,9 +11,13 @@ import java.util.List;
  */
 public interface VoteService {
 
-    Vote add(Vote answer);
-    Vote edit(long id, Vote vote);
+    VoteResponse create(VoteRequest voteRequest);
+
+    VoteResponse update(long id, VoteRequest voteRequest);
+
     void delete(long id);
-    Vote getById(long id);
-    List<Vote> getAll();
+
+    VoteResponse getById(long id);
+
+    List<VoteResponse> getAll();
 }

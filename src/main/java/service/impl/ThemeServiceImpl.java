@@ -1,10 +1,13 @@
 package service.impl;
 
 import domain.Theme;
+import dto.ThemeDTO.ThemeRequest;
+import dto.ThemeDTO.ThemeResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import repository.ThemeRepository;
 import service.ThemeService;
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,20 +21,22 @@ public class ThemeServiceImpl implements ThemeService {
     private ThemeRepository themeRepository;
 
     @Override
-    public Theme add(Theme theme) {
+    public ThemeResponse create(ThemeRequest themeRequest) {
         Theme newTheme = new Theme();
-        newTheme.setName(theme.getName());
-        newTheme.setStatus(theme.getStatus());
-        Theme savedTheme = themeRepository.saveAndFlush(theme);
-        return savedTheme;
+        newTheme.setName(themeRequest.getName());
+        newTheme.setStatus(themeRequest.getStatus());
+        Theme savedTheme = themeRepository.saveAndFlush(newTheme);
+        ThemeResponse response = new ThemeResponse(savedTheme);
+        return response;
     }
 
     @Override
-    public Theme edit(long id, Theme theme) {
+    public ThemeResponse update(long id, ThemeRequest themeRequest) {
         Theme editedTheme = themeRepository.findOne(id);
-        editedTheme.setStatus(theme.getStatus());
-        editedTheme.setName(theme.getName());
-        return themeRepository.saveAndFlush(editedTheme);
+        editedTheme.setName(themeRequest.getName());
+        editedTheme.setStatus(themeRequest.getStatus());
+        ThemeResponse response = new ThemeResponse(editedTheme);
+        return response;
     }
 
     @Override
@@ -40,12 +45,20 @@ public class ThemeServiceImpl implements ThemeService {
     }
 
     @Override
-    public Theme getById(long id) {
-        return themeRepository.getOne(id);
+    public ThemeResponse getById(long id) {
+        Theme theme = themeRepository.getOne(id);
+        ThemeResponse response = new ThemeResponse(theme);
+        return response;
     }
 
     @Override
-    public List<Theme> getAll() {
-        return themeRepository.findAll();
+    public List<ThemeResponse> getAll() {
+        List<Theme> themes = themeRepository.findAll();
+        List<ThemeResponse> responses = new ArrayList<>();
+        for (int i = 0; i < themes.size(); i++) {
+            ThemeResponse response = new ThemeResponse(themes.get(i));
+            responses.add(response);
+        }
+        return responses;
     }
 }
