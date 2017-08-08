@@ -43,8 +43,6 @@ public class VoteResource {
     public VoteResponse update(@PathVariable("id") long id,
                                @RequestBody VoteRequest request) {
         VoteResponse response = service.update(id, request);
-        response.setAnswer(request.getAnswer());
-        response.setEmail(request.getEmail());
         return response;
     }
 

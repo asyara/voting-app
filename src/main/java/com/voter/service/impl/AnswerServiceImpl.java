@@ -43,9 +43,9 @@ public class AnswerServiceImpl implements AnswerService {
     @Override
     public AnswerResponse update(long id, AnswerRequest answerRequest) {
         Answer editedAnswer = answerRepository.findOne(id);
-        editedAnswer.setTheme(answerRequest.getTheme());
         editedAnswer.setAnswerText(answerRequest.getAnswerText());
-        AnswerResponse response = new AnswerResponse(editedAnswer);
+        Answer savedAnswer = answerRepository.save(editedAnswer);
+        AnswerResponse response = new AnswerResponse(savedAnswer);
         return response;
     }
 

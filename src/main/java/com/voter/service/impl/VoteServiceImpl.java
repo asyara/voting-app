@@ -1,8 +1,10 @@
 package com.voter.service.impl;
 
+import com.voter.domain.Answer;
 import com.voter.domain.Vote;
 import com.voter.dto.VoteDTO.VoteRequest;
 import com.voter.dto.VoteDTO.VoteResponse;
+import com.voter.repository.AnswerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.voter.repository.VoteRepository;
 import com.voter.service.VoteService;
@@ -22,10 +24,13 @@ public class VoteServiceImpl implements VoteService {
     @Autowired
     private VoteRepository voteRepository;
 
+    @Autowired
+    private AnswerRepository answerRepository;
+
     @Override
     public VoteResponse create(VoteRequest voteRequest) {
         Vote newVote = new Vote();
-        newVote.setAnswer(voteRequest.getAnswer());
+        newVote.setAnswer(answerRepository.findOne(voteRequest.getAnswer().getId()));
         newVote.setEmail(voteRequest.getEmail());
         Vote savedVote = voteRepository.save(newVote);
         VoteResponse response = new VoteResponse(savedVote);
@@ -35,9 +40,9 @@ public class VoteServiceImpl implements VoteService {
     @Override
     public VoteResponse update(long id, VoteRequest voteRequest) {
         Vote editedVote = voteRepository.findOne(id);
-        editedVote.setEmail(editedVote.getEmail());
-        editedVote.setAnswer(editedVote.getAnswer());
-        VoteResponse response = new VoteResponse(editedVote);
+        editedVote.setEmail(voteRequest.getEmail());
+        Vote savedVote = voteRepository.save(editedVote);
+        VoteResponse response = new VoteResponse(savedVote);
         return response;
     }
 

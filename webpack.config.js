@@ -53,8 +53,8 @@ var config = {
             },
             {
                 test: /\.(js|jsx)$/,
-                use:  [
-                    { loader: 'babel-loader', options: { presets: ['es2015', 'react', 'stage-2'] } }
+                use: [
+                    {loader: 'babel-loader', options: {presets: ['es2015', 'react', 'stage-2']}}
                 ],
                 exclude: /node_modules/
             }
@@ -67,7 +67,7 @@ var config = {
             {from: './*/*.html', to: '../'}
         ]),
         new ExtractTextPlugin({
-            filename:'../style/app.css',
+            filename: '../style/app.css',
             allChunks: true
         })
     ],

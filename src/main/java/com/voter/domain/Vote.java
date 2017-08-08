@@ -13,7 +13,7 @@ public class Vote extends AbstractDomain {
     private String email;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "vote_id", nullable = false)
+    @JoinColumn(name = "answer_id", nullable = false)
     private Answer answer;
 
     public String getEmail() {

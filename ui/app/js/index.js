@@ -14,7 +14,7 @@ import ShowQuestion from './question/show-question.jsx';
 
 //import reducer from './music/reducers';
 
-import css from '../scss/app.scss';
+import css from '../css/app.scss';
 
 //const store = createStore(reducer, applyMiddleware(thunk));
 
