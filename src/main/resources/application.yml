@@ -1,0 +1,9 @@
+db:
+  username: root
+  password: root
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/voter?characterEncoding=UTF-8
+
+server:
+  servlet-path: /api/
+  port: 8080

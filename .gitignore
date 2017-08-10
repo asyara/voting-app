@@ -7,3 +7,7 @@ node_modules/
 target/
 tmp/
 .idea/
+src/main/webapp/dist
+src/main/webapp/style
+src/main/webapp/*.html
+ui/vendors
