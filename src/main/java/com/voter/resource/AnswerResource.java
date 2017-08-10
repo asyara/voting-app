@@ -1,7 +1,7 @@
 package com.voter.resource;
 
-import com.voter.dto.AnswerDTO.AnswerRequest;
-import com.voter.dto.AnswerDTO.AnswerResponse;
+import com.voter.dto.answer.AnswerRequest;
+import com.voter.dto.answer.AnswerResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

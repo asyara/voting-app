@@ -1,4 +1,4 @@
-package com.voter.dto.VoteDTO;
+package com.voter.dto.vote;
 
 import com.voter.domain.Answer;
 

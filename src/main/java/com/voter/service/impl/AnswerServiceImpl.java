@@ -2,9 +2,8 @@ package com.voter.service.impl;
 
 import com.voter.domain.Answer;
 import com.voter.domain.Theme;
-import com.voter.dto.AnswerDTO.AnswerRequest;
-import com.voter.dto.AnswerDTO.AnswerResponse;
-import com.voter.dto.ThemeDTO.ThemeResponse;
+import com.voter.dto.answer.AnswerRequest;
+import com.voter.dto.answer.AnswerResponse;
 import com.voter.repository.ThemeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.voter.repository.AnswerRepository;

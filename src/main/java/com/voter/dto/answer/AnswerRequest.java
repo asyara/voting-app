@@ -1,7 +1,6 @@
-package com.voter.dto.AnswerDTO;
+package com.voter.dto.answer;
 
 import com.voter.domain.Theme;
-import com.voter.domain.Vote;
 
 /**
  * Created by DmitryL on 02.08.2017.

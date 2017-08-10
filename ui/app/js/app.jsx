@@ -1,6 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux';
+/*import { getAnswers} from './actions/answers';*/
 
 export default class App extends React.Component {
+    /*addAnswer() {
+        this.props.onAddAnswer(this.answerInput.value);
+        this.answerInput.value = '';
+    }*/
+
     render() {
         return (
             <div className="site-wrapper">
@@ -13,15 +20,17 @@ export default class App extends React.Component {
                             </div>
                         </div>
 
-                       <div className="container">
+                        <div className="container">
                        { this.props.children }
-                       </div>
+                        </div>
 
                         <div className="mastfoot">
                             <div className="inner">
                                 <p>Cover template for
-                                    <a href="https://getbootstrap.com">Bootstrap</a>, by
-                                    <a href="https://twitter.com/mdo">@mdo</a>.
+                                    <a href="https://getbootstrap.com">Bootstrap</a>
+                                    , by
+                                    <a href="https://twitter.com/mdo">@mdo</a>
+                                    .
                                 </p>
                             </div>
                         </div>
@@ -31,3 +40,23 @@ export default class App extends React.Component {
         )
     }
 }
+
+/*
+export default connect(
+        state => ({
+        answer: state.answer
+    }),
+        dispatch => ({
+        onAddAnswer: (answer) => {
+            dispatch({
+                type: 'ADD_ANSWER',
+                payload: {
+                    name: "my answer"
+                }
+            });
+        },
+        onGetAnswer: () => {
+            dispatch.getAnswers()
+        }
+    })
+)(App);*/

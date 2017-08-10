@@ -1,7 +1,7 @@
 package com.voter.service;
 
-import com.voter.dto.ThemeDTO.ThemeRequest;
-import com.voter.dto.ThemeDTO.ThemeResponse;
+import com.voter.dto.theme.ThemeRequest;
+import com.voter.dto.theme.ThemeResponse;
 
 import java.util.List;
 

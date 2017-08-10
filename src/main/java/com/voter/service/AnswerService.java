@@ -1,7 +1,7 @@
 package com.voter.service;
 
-import com.voter.dto.AnswerDTO.AnswerRequest;
-import com.voter.dto.AnswerDTO.AnswerResponse;
+import com.voter.dto.answer.AnswerRequest;
+import com.voter.dto.answer.AnswerResponse;
 
 import java.util.List;
 

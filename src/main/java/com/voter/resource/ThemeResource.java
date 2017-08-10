@@ -1,7 +1,7 @@
 package com.voter.resource;
 
-import com.voter.dto.ThemeDTO.ThemeRequest;
-import com.voter.dto.ThemeDTO.ThemeResponse;
+import com.voter.dto.theme.ThemeRequest;
+import com.voter.dto.theme.ThemeResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -42,8 +42,6 @@ public class ThemeResource {
     public ThemeResponse update(@PathVariable("id") long id,
                                 @RequestBody ThemeRequest request) {
         ThemeResponse response = service.update(id, request);
-        response.setName(request.getName());
-        response.setStatus(request.getStatus());
         return response;
     }
 

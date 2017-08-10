@@ -1,8 +1,7 @@
-package com.voter.dto.AnswerDTO;
+package com.voter.dto.answer;
 
 import com.voter.domain.Answer;
-import com.voter.domain.Theme;
-import com.voter.dto.ThemeDTO.ThemeResponse;
+import com.voter.dto.theme.ThemeResponse;
 
 /**
  * Created by DmitryL on 02.08.2017.
@@ -12,6 +11,7 @@ public class AnswerResponse {
     private Long id;
     private String answerText;
     private ThemeResponse theme;
+    private int count;
 
     public AnswerResponse(Answer answer) {
         this.id = answer.getId();
@@ -44,5 +44,13 @@ public class AnswerResponse {
 
     public void setTheme(ThemeResponse theme) {
         this.theme = theme;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }

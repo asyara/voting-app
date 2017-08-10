@@ -1,8 +1,7 @@
-package com.voter.dto.VoteDTO;
+package com.voter.dto.vote;
 
-import com.voter.domain.Answer;
 import com.voter.domain.Vote;
-import com.voter.dto.AnswerDTO.AnswerResponse;
+import com.voter.dto.answer.AnswerResponse;
 
 /**
  * Created by DmitryL on 02.08.2017.

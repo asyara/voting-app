@@ -1,4 +1,6 @@
-package com.voter.dto.ThemeDTO;
+package com.voter.dto.theme;
+
+import java.util.List;
 
 /**
  * Created by DmitryL on 02.08.2017.
@@ -6,7 +8,7 @@ package com.voter.dto.ThemeDTO;
 public class ThemeRequest {
 
     private String name;
-    private int status;
+    private List<String> answers;
 
     public String getName() {
         return name;
@@ -16,11 +18,11 @@ public class ThemeRequest {
         this.name = name;
     }
 
-    public int getStatus() {
-        return status;
+    public List<String> getAnswers() {
+        return answers;
     }
 
-    public void setStatus(int status) {
-        this.status = status;
+    public void setAnswers(List<String> answers) {
+        this.answers = answers;
     }
 }
