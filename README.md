@@ -24,7 +24,7 @@
 
 1. Download UI dependencies
 
-    mpn install
+    npm install
     
 2. Build UI
 
