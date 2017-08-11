@@ -13,23 +13,7 @@ import ShowQuestion from './question/show-question.jsx';
 import reducer from './reducers';
 import css from '../css/app.scss';
 import axios from 'axios';
-/*
 
-const initialState = {
-    answer: []
-};
-
-function answer(state = initialState, action = null) {
-    if (action.type === 'ADD_ANSWER') {
-        return {
-            answers: [...state.answers, action.payload]
-        };
-    } else if (action.type === 'GET_ANSWER') {
-        return state;
-    }
-    return state;
-}
-*/
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
